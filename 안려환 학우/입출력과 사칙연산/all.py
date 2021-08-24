@@ -61,4 +61,4 @@
 # list_1 = [one,ten,thousand]
 # for i in range(3):
 #     print(list_1[i] * a)
-# print(a * b)1
+# print(a * b)
