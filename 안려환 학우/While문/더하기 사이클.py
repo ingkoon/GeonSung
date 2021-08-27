@@ -13,7 +13,7 @@ if N < 10:
             a = a * 11
         else:
             cycle += 1
-            b = a//10 + a % 10
+            b = a // 10 + a % 10
             a = a % 10 * 10 + b % 10
 
 elif N == 0:
@@ -29,7 +29,7 @@ else:
             a = a * 11
         else:
             cycle += 1
-            b = a//10 + a % 10
+            b = a // 10 + a % 10
             a = a % 10 * 10 + b % 10
 
 print(cycle)
