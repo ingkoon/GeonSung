@@ -6,7 +6,7 @@ N = int(sys.stdin.readline())
 
 if N < 10:
     cycle += 1
-    a = N * 11 
+    a = N * 11
     while a != N:
         if a < 10:
             cycle += 1
