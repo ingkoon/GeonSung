@@ -12,7 +12,7 @@ def hansu(a):
             if i < 100:
                 han += 1
             else:
-                hot = list(map(int,str(i)))
+                hot = list(map(int,str(i))) #인터넷에서 보고 왔읍니다....
                 if hot[0] - hot[1] == hot[1] - hot[2]:   #각 자리의 차이가 등차인지 확인
                     han += 1
     return han
