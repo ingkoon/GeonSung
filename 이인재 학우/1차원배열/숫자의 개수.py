@@ -24,3 +24,4 @@ for i in resultValue:
 
 for j in numberList:
     print(j)
+

@@ -37,5 +37,4 @@ while True:
         a = int(b)
         b = result % 10
 
-
 print(cnt)
