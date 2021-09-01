@@ -2,6 +2,7 @@ import sys
 
 N = int(sys.stdin.readline())
 nums = list(map(int,sys.stdin.readline().rstrip())) #훌륭쓰
+
 #    total += nums[i]
 #TypeError: unsupported operand type(s) for +=: 'int' and 'str'
 #라는 에러가 발생하여 이걸 해결해주기 위해 이 list안에 들어갈 형태를 지정

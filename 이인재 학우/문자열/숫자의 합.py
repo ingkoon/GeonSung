@@ -8,7 +8,7 @@ import sys
 
 # 숫자를 문자열 타입으로 입력
 num_input = sys.stdin.readline()
-
+num_input = num_input[:-1]
 # 결과값을 위한 변수 선언
 result = 0
 
