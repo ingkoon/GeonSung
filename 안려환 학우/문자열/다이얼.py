@@ -4,6 +4,7 @@ dial = '33344455566677788889999999' #계산해보니 이대로 더해주면 되�
 sum = 0
 count = 0
 
+
 if len(input_string) <= 15 and len(input_string) >= 2: #입력조건
     for i in range(len(input_string)): #입력받은 만큼 반복
         for j in range(len(alphabet)): #알파벡에서 확인해보려고
@@ -14,5 +15,6 @@ if len(input_string) <= 15 and len(input_string) >= 2: #입력조건
                    sum += int(dial[j])
 else:
     print("You entered wrong string")
+
 
 print(sum)
