@@ -12,17 +12,20 @@
 
 import sys
 
+# 각각 고정 비용, 생산 비용, 노트북 가격
 A, B, C = map(int, sys.stdin.readline().split())
 
+# 결과값
+result = 0
 
-result = 1
-expense = A+B
-while result*C < expense:
-    if(expense/result*C == expense/(result+1)*C):
-        result = -1
-        break
-    result += 1
-    expense += B
-    
+# 생산비용이 노트북 가격보다 클 경우 -1(이익 발생 x)을 출력
+if C-B <= 0:
+    result = -1
+else:
+    # 그 외의 모든 경우에 대해서는 노트북 가격에서 생산비용을 차감한 후 해당 가격으로 고정비용을 나눈다.
+    result = int(A/(C-B) + 1) 
 
+# 결과 출력
 print(result) 
+
+# 사고가 닿지 않아서 고생했듬
