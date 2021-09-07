@@ -15,11 +15,16 @@ userInput = int(sys.stdin.readline())
 cnt = 1
 val = 1
 while True:
+
+    if userInput == 1:
+        print(1)
+        break
+
     val += cnt * 6
-    if val > userInput:
-        print(cnt+1)
+    
+    if val >= userInput:
+        print(cnt + 1)
         break
     else:
         cnt += 1
     
-
