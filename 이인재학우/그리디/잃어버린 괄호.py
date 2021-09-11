@@ -31,6 +31,8 @@ print(numList)
 for j in range(len(arr)):
     if arr[j] == '+':
         result += numList[j] + numList[j+1]
+        numList.pop(j)
+        numList.pop(j+1)
 
 for k in range(len(arr)):
     if arr[k] == '-':
