@@ -13,29 +13,20 @@
 # 출력
 # 첫째 줄에 정답을 출력한다.
 
-import re
 import sys
 
-exp = sys.stdin.readline().rstrip()
+# -를 기준으로 분할해서 입력
+exp = sys.stdin.readline().rstrip().split("-")
+
+# 결과값 반환을 위한 변수
 result = 0
 
-numList = list(map(int, re.findall("\d+",exp)))
-arr = []
+# 0번째 값은 무조건 덧셈이므로 분할하여 결과값에 지정
+for i in exp[0].split("+"):    
+    result += int(i)
 
-for i in exp:
-    if i == '+' or i == '-':
-        arr.append(i)
-print(arr)
-print(numList)
-
-for j in range(len(arr)):
-    if arr[j] == '+':
-        result += numList[j] + numList[j+1]
-
-for k in range(len(arr)):
-    if arr[k] == '-':
-        result = numList[k] - result
-    
-
-
-print(result)
+# 나머지 값은 모두 -를 기점으로 구분한 것이기 때문에 해당값으로 차감
+for i in exp[1:]:
+    for j in i.split("+"):        
+        result -= int(j)
+print(result)    
