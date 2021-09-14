@@ -19,29 +19,40 @@
 import sys
 n = int(sys.stdin.readline())
 
+# 변수가 들어갈 스택과 연산자 출력을 위한 리스트 선언
 stack = []
-data = []
+op = []
 
+# 현재 스택의 최상단에 들어갈 정수를 체크하기 위한 변수
 cnt = 0
+
+# 수열이 성립되는지 확인하기 위한 플래그
 noFlag = True
 
-while n > 0:
+# 입력받은 n이 0이 될 때까지 반복 수행
+for _ in range(n):
+    # 사용자로부터 정수 입력
     num = int(sys.stdin.readline())
      
+    # 입력받은 수가 스택의 최상단값보다 클 경우
     while cnt < num:
+        # 카운트 증가
         cnt += 1
+        # 스택에 카운트 만큼 추가
         stack.append(cnt)
-        data.append("+")
+        # 연산자에 해당 갯수만큼 + 연산자 추가
+        op.append("+")
     
+    # 스택의 최상단 변수의 값이
     if stack[-1] == num:
         stack.pop()
-        data.append("-")
+        op.append("-")
     else:
         noFlag = False
-        exit(0)
-    n -= 1
+        continue
+ 
 
 if noFlag==False:
     print("NO")
 else:
-    print("\n".join(data))
+    print("\n".join(op))
