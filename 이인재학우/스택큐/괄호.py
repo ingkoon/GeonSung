@@ -31,7 +31,8 @@ result = []
 
 for i in arr:
     stack = []
-    print(i)
+    errflag = 0
+
     while i:        
         tmp = i.popleft()
 
@@ -39,14 +40,16 @@ for i in arr:
             stack.append(tmp)
 
         else:
-            if not stack or stack[-1] == ")":                
-                result.append("NO")
+            if not stack :                
+                errflag = 1
                 break;
-
             else:
                 stack.pop()
-        if not i:
-            result.append("Yes")
+                
+    if stack or errflag == 1:
+        result.append("No")    
+    else:
+        result.append("Yes")
 
 print(*result, sep = "\n")
 

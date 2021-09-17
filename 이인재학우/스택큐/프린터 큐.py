@@ -29,7 +29,7 @@ for _ in range(testCase):
     arr = deque(list(map(int, sys.stdin.readline().split())))
 
     val = arr[m]
-
+    
     
     resultArr = []
 
