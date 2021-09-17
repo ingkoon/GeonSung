@@ -20,32 +20,44 @@
 import sys
 from collections import deque
 
+# 테스트 케이스 개수 입력
 testCase = int(sys.stdin.readline())
 
+# 결과 반환을 위한 변수 할당
 result = []
 
+# 테스트 케이스 개수만큼 반복문 수행
 for _ in range(testCase):
+    # 문서의 개수와 궁금한 문서의 위치를 입력
     n, m = map(int, sys.stdin.readline().split())
+
+    # 큐를 입력받는다.
     arr = deque(list(map(int, sys.stdin.readline().split())))
 
+    # 문서의 위치를 기억하기 위한 배열 선언
+    tmpArr = [i for i in range(n)]
+    tmpArr2 = []
     val = arr[m]
-    
     
     resultArr = []
 
     while arr:
         tmp = arr.popleft()
-        
+        tmp2 = tmpArr.pop(0)
+
         if not arr:
             resultArr.append(tmp)
+            tmpArr2.append(tmp2)
             break
 
         if tmp >= max(arr):
             resultArr.append(tmp)
+            tmpArr2.append(tmp2)
         else:
             arr.append(tmp)
+            tmpArr.append(tmp2)
         
-    result.append(resultArr.index(val)+1)
+    result.append(tmpArr2.index(m)+1)
 
 print(*result[:], sep= '\n')
 

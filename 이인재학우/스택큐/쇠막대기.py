@@ -26,10 +26,7 @@
 
 import sys
 
-n = list(map(str, sys.stdin.readline().rstrip()))
-
-print(n)
-
+n = list(sys.stdin.readline().rstrip())
 stack = []
 
 
