@@ -29,15 +29,13 @@ import sys
 n = list(sys.stdin.readline().rstrip())
 stack = []
 
-
 cnt = 0
 
-while n:
-    tmp = n.pop(0)
-    if tmp == "(":
-        stack.append(tmp)        
+for i in range(len(n)):
+    if n[i] == "(":
+        stack.append("(")        
     else:
-        if stack[-1] == '(':
+        if n[i-1] == '(':
             stack.pop()
             cnt += len(stack)
         else:
