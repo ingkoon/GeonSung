@@ -6,7 +6,7 @@ import sys
 
 # 그 +로 구분해서 나누는 것을 못했습니다....
 
-a_list = list(map(str,sys.stdin.readline().split('-')))
+a_list = list(map(str,sys.stdin.readline().rstrip().split('-'))) # rstrip 은 split 전에 개행을 제거하고 기준으로 구분한다. 말의 순서에 대해서 생각해보자.
 # 개행은 그냥 무시해버리고 했는데 됩니다...
 # 개행때문에 input쓰니 런타임 에러 발생
 first_num = 0
