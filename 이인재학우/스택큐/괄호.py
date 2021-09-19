@@ -19,13 +19,14 @@
 # 출력
 # 출력은 표준 출력을 사용한다. 
 # 만일 입력 괄호 문자열이 올바른 괄호 문자열(VPS)이면 “YES”, 아니면 “NO”를 한 줄에 하나씩 차례대로 출력해야 한다. 
+#...
 
 import sys
 from collections import deque
 
 n = int(sys.stdin.readline())
 
-arr = [deque(list(map(str, sys.stdin.readline().rstrip())))for _ in range(n)]
+arr = [deque(list(map(str, sys.stdin.readline().rstrip()))) for _ in range(n)]
 
 result = []
 
@@ -47,9 +48,9 @@ for i in arr:
                 stack.pop()
                 
     if stack or errflag == 1:
-        result.append("No")    
+        result.append("NO")    
     else:
-        result.append("Yes")
+        result.append("YES")
 
 print(*result, sep = "\n")
 
