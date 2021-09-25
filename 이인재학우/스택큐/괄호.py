@@ -53,5 +53,3 @@ for i in arr:
         result.append("YES")
 
 print(*result, sep = "\n")
-
-

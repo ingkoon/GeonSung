@@ -25,15 +25,13 @@ import sys
 n = int(sys.stdin.readline())
 e = int(sys.stdin.readline())
 
-graph = [[] for i in range(e+1)]
+graph = [[] for i in range(n+1)]
 visited = [False for i in range(n+1)]
 
-for i in range(1,e+1):
-    graph[i] = list(map(int, sys.stdin.readline().split()))
-
-print(graph)
-print(visited)
-# graph.sort(key=lambda x:x[0])
+for i in range(e):
+    s, d = list(map(int, sys.stdin.readline().split()))
+    graph[s].append(d)
+    graph[d].append(s)
 
 def dfs(graph, v, visited):
     visited[v] = True
@@ -43,4 +41,4 @@ def dfs(graph, v, visited):
 
 dfs(graph, 1, visited)
 
-print(visited.count(True))
+print(visited.count(True)-1)
