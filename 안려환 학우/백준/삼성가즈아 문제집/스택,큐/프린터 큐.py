@@ -19,15 +19,44 @@ import sys
 
 # 뒤에 본인보다 중요도 큰 수 있으면 바로 맨 뒤로 간다.
 
-test_case = int(sys.stdin.readline())
-result_list = [0 for _ in range(test_case)]
-stack = []
+from collections import deque
+
+num = int(sys.stdin.readline())
 final = []
-for i in range(test_case):
-    n = int(sys.stdin.readline())
-    stack.append(sys.stdin.readline().rstrip().split())
-    for j in range(len(stack)):
-        if j < max(stack):
-            stack.append(stack.pop(j))
+for _ in range(num):
+    N, M = map(int,sys.stdin.readline().split())
+    que = deque(map(int,sys.stdin.readline().split()))
+    cnt = 0
+    while que:
+        top = max(que) # 최대와 비교
+        M -= 1 # 몇 번째 자리의 수를 가져다 쓸 것인지인 M
+        pop = que.popleft() 
+        if top != pop:
+            que.append(pop) # 내가 사용했던 것을 좀 더 보기 편하게 만들었다.
+            if M < 0:
+                M = len(que) - 1
         else:
-            final.append(st)
+            cnt += 1
+            if M == -1:
+                final.append(cnt) # 출력부 모양을 맞춰주기 위함이다.
+                break
+
+for i in final:
+    print(i)
+
+# test_case = int(sys.stdin.readline())
+# result_list = [0 for _ in range(test_case)]
+# stack = []
+# final = []
+# for _ in range(test_case):
+#     n, s = map(int,sys.stdin.readline().rstrip().split())
+#     temp = [i for i in range(1,n + 1)]
+#     stack = sys.stdin.readline().rstrip().split()
+#     for j in range(len(stack)):
+#         if stack[j] < max(stack):
+#             stack.append(stack.pop(j))
+#             temp.append(temp.pop(j))
+#         else:
+#             stack.pop(j)
+#             final.append(temp.pop(j))
+
