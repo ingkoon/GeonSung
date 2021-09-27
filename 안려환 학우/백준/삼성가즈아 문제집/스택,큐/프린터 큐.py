@@ -19,7 +19,7 @@ import sys
 
 # 뒤에 본인보다 중요도 큰 수 있으면 바로 맨 뒤로 간다.
 
-from collections import deque
+from collections import deque # 리스트 대신 쓰는데 append 와 pop 이 빨라진다 생각
 
 num = int(sys.stdin.readline())
 final = []
