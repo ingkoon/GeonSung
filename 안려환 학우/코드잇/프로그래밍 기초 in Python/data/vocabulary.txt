@@ -1,3 +1,9 @@
-wallet: ����
-dog: ��
-cat: ������
+wallet: 지갑
+dog: 개
+cat: 고양이
+bicycle: 자전거
+soap: 비누
+temple: 절
+fruit: 과일
+trip: 여행
+fish: 생선
