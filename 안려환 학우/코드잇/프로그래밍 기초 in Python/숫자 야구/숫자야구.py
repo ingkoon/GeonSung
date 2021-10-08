@@ -50,15 +50,19 @@ def input_num(count):
 def check(num_list,in_list):
     s_count = 0
     b_count = 0
+    s_list = []
+    check_list = []
     for i in range(3):
         if num_list[i] == in_list[i]:
             s_count += 1
-    for i in range(3):
+            s_list.append(num_list[i])
+    check_list = list(set(in_list) - set(s_list)) # 차집합 구하기
+    for i in range(len(check_list)):
         for j in range(3):
-            if num_list[j] == in_list[i]:
+            if num_list[j] == check_list[i]:
                 b_count += 1
     total = str(s_count) + 'S ' + str(b_count) + 'B'
-    print(total)
+    print(total + '\n')
     return s_count
 
 
