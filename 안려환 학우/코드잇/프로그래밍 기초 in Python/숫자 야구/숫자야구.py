@@ -82,3 +82,36 @@ def game(game_count):
 
 game(game_count)
 
+
+
+
+# 코드잇에서 주어지는 리스트를 가지고 풀이한 코드
+
+# def check(num_list,in_list):
+#     s_count = 0
+#     b_count = 0
+#     s_list = []
+#     check_list = []
+#     for i in range(3):
+#         if num_list[i] == in_list[i]:
+#             s_count += 1
+#             s_list.append(num_list[i])
+#     check_list = list(set(in_list) - set(s_list)) # 차집합 구하기
+#     for i in range(len(check_list)):
+#         for j in range(3):
+#             if num_list[j] == check_list[i]:
+#                 b_count += 1
+#     total = str(s_count) + 'S ' + str(b_count) + 'B'
+#     return s_count, b_count
+# # 테스트
+# s_1, b_1 = check([2, 7, 4], [2, 4, 7])
+# print(s_1, b_1)
+
+# s_2, b_2 = check([7, 2, 4], [2, 4, 7])
+# print(s_2, b_2)
+
+# s_3, b_3 = check([0, 4, 7], [2, 4, 7])
+# print(s_3, b_3)
+
+# s_4, b_4 = check([2, 4, 7], [2, 4, 7])
+# print(s_4, b_4)
