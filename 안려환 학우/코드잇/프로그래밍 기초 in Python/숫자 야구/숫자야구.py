@@ -15,6 +15,7 @@ def generate_rand():
 
 
 def input_num(count):
+    final_list = []
     if count < 4:
         a = int(input(f'{count}번째 숫자를 입력하세요: '))
         if len(input_list) == 0:
@@ -39,8 +40,9 @@ def input_num(count):
                 print('범위를 벗어나는 숫자입니다. 다시 입력하세요.')
                 return input_num(count)
     else:
-        final_list = input_list
-        input_list.clear()
+        for i in range(3):
+            final_list.append(input_list[i]) # 요소들을 직접 넣어줍니다.
+        input_list.clear() # 파이썬이 배열을 =처리하게 되면 주소를 가리키게되어서 문제가 발생합니다.
         return final_list
 
 
@@ -66,9 +68,7 @@ print('0과 9 사이의 서로 다른 숫자 3개를 랜덤한 순서로 뽑았�
 
 def game(game_count):
     print('숫자 3개를 하나씩 차례대로 입력하세요.')
-    n = input_num(count)
-    print(n)
-    a = check(num_list,n)
+    a = check(num_list,input_num(count))
     if a == 3:
         print(f'\n축하합니다. {game_count}번 만에 숫자 3개의 값과 위치를 모두 맞추셨습니다.')
     else:
