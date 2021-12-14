@@ -11,7 +11,7 @@ def generate_rand():
     if len(rand_list) == len(check):
         return rand_list
     else:
-        return generate_rand()
+        return generate_rand()   # just check
 
 
 def input_num(count):
