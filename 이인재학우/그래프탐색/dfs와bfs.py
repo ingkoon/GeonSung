@@ -5,7 +5,7 @@ from collections import deque
 n ,m ,v = map(int, sys.stdin.readline().split())
 
 # 그래프를 2차원 리스트 형태로 지정
-graph = [[] for i in range(m+1)]
+graph = [[] for i in range(n+1)]
 
 # for 문을 통해 시작 지점과 연결된 목적지점을 리스트에 추가
 for i in range(m):
@@ -15,8 +15,6 @@ for i in range(m):
 
 for i in range(m):
     graph[i].sort()
-# 테스트 출력
-#print(graph)
 
 # 방문한 정점에 대해 True로 바꿀 수 있도록 지정
 visited = [False for i in range(n+1)]
